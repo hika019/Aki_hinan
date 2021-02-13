@@ -8,8 +8,10 @@ import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_recycler.view.*
 
-class CustomAdapter(private val area_List: ArrayList<Map<String, Any>>,
-                    private val context: Context): RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
+class CustomAdapter(private val area_List: Array<Any>,
+                    private val context: Context,
+                    private val serch_level: String
+): RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
 
     lateinit var listener: AdapterView.OnItemClickListener
 
@@ -25,8 +27,16 @@ class CustomAdapter(private val area_List: ArrayList<Map<String, Any>>,
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        val area_data = area_List[position] as Map<String, Any>
-        val area_title = area_data["title"] as String
+
+        var area_title = ""
+
+        if(serch_level == "area"){
+            area_title = area_List[position] as String
+        }else{
+            val area_data = area_List[position] as Map<String, Any>
+            area_title = area_data["title"] as String
+        }
+
 
         holder.area_text.text = area_title
 

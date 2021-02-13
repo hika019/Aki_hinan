@@ -11,74 +11,114 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/nihon" />
 
     <TextView
         android:id="@+id/hokkaido_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
         android:text="北海道"
-        tools:layout_editor_absoluteX="284dp"
-        tools:layout_editor_absoluteY="137dp" />
+        android:textSize="@dimen/area_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/touhoku_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/touhoku_textview" />
 
     <TextView
         android:id="@+id/touhoku_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="東北"
-        tools:layout_editor_absoluteX="241dp"
-        tools:layout_editor_absoluteY="272dp" />
+        android:textSize="@dimen/area_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/hokkaido_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView" />
 
     <TextView
         android:id="@+id/hokuriku_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="北陸"
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="322dp" />
+        android:textSize="@dimen/area_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/tyuugoku_textView"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tyuugoku_textView" />
 
     <TextView
         android:id="@+id/kantou_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="関東"
-        tools:layout_editor_absoluteX="326dp"
-        tools:layout_editor_absoluteY="519dp" />
+        android:textSize="@dimen/area_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/toukai_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/toukai_textView" />
 
     <TextView
         android:id="@+id/toukai_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="東海"
-        tools:layout_editor_absoluteX="226dp"
-        tools:layout_editor_absoluteY="538dp" />
+        android:textSize="@dimen/area_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/sikoku_textView"
+        app:layout_constraintEnd_toStartOf="@+id/kantou_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sikoku_textView" />
 
     <TextView
         android:id="@+id/sikoku_textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="四国"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="565dp" />
-
-    <TextView
-        android:id="@+id/tyuugoku_textView
-"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="中国"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="356dp" />
+        android:textSize="@dimen/area_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/kyusyu_textView"
+        app:layout_constraintEnd_toStartOf="@+id/toukai_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/kyusyu_textView" />
 
     <TextView
         android:id="@+id/kyusyu_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
         android:text="九州"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="546dp" />
+        android:textSize="@dimen/area_text_size"
+        app:layout_constraintEnd_toStartOf="@+id/sikoku_textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tyuugoku_textView" />
+
+    <TextView
+        android:id="@+id/tyuugoku_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="中国"
+        android:textSize="@dimen/area_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/hokuriku_textview"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="近畿"
+        android:textSize="@dimen/area_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/hokuriku_textview"
+        app:layout_constraintEnd_toStartOf="@+id/touhoku_textview"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/hokuriku_textview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

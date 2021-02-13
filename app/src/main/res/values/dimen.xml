@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="area_text_size">20sp</dimen>
+    <dimen name="area_text_size">24sp</dimen>
+    <dimen name="recycleview_item_textsize">32sp</dimen>
 
 </resources>
