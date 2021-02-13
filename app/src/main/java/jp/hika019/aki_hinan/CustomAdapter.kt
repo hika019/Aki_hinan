@@ -1,6 +1,7 @@
 package jp.hika019.aki_hinan
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_recycler.view.*
 
-class CustomAdapter(private val area_List: Array<Any>,
+class CustomAdapter(private val area_List: ArrayList<Any>,
                     private val context: Context,
                     private val serch_level: String
 ): RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
@@ -32,21 +33,41 @@ class CustomAdapter(private val area_List: Array<Any>,
 
         if(serch_level == "area"){
             area_title = area_List[position] as String
+
+
+            holder.area_text.text = area_title
+            holder.view.setOnClickListener {
+                //しょり
+                prefecture = area_List[position] as String
+                Log.d("hoge", "prefecture: $prefecture")
+            }
+
         }else{
             val area_data = area_List[position] as Map<String, Any>
             area_title = area_data["title"] as String
+
+            holder.area_text.text = area_title
+            holder.view.setOnClickListener {
+                //しょり
+
+            }
         }
 
-
-        holder.area_text.text = area_title
-
-        holder.view.setOnClickListener {
-            //しょり
-        }
     }
 
     override fun getItemCount(): Int {
         return area_List.size
+    }
+
+    interface OnItemClickListener{
+        fun onItemClickListener(view: View, position: Int, clickedText: String)
+    }
+
+    // Itemを削除する
+    private fun removeItem(position: Int) {
+        area_List.removeAt(position)
+        notifyItemRemoved(position)
+        notifyDataSetChanged() // これを忘れるとRecyclerViewにItemが反映されない
     }
 
 }
