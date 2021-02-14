@@ -7,12 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.item_recycler.view.*
 
 class CustomAdapter(private val area_List: ArrayList<Any>,
-                    private val context: Context,
-                    private val serch_level: String
+                    private val serch_level: String,
+                    private val view: View,
+                    private val context: Context
 ): RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
+
 
     lateinit var listener: AdapterView.OnItemClickListener
 
@@ -28,11 +31,11 @@ class CustomAdapter(private val area_List: ArrayList<Any>,
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-
         var area_title = ""
 
         if(serch_level == "area"){
             area_title = area_List[position] as String
+            Log.d("hoge", "call3")
 
 
             holder.area_text.text = area_title
@@ -40,6 +43,9 @@ class CustomAdapter(private val area_List: ArrayList<Any>,
                 //しょり
                 prefecture = area_List[position] as String
                 Log.d("hoge", "prefecture: $prefecture")
+
+                path += prefecture
+                firedb_class(view, context).get_city()
             }
 
         }else{

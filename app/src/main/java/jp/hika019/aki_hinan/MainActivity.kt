@@ -8,9 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.DocumentChange
 import kotlinx.android.synthetic.main.activity_main.*
 
-var prefecture = ""
-var city = ""
-
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val ft = supportFragmentManager.beginTransaction()
-        ft.replace(R.id.fragment3, activity_prefecture())
+        ft.replace(R.id.fragment_container, activity_prefecture())
         ft.commit()
 
 
